@@ -1,0 +1,136 @@
+:root {
+    --bg-color: #f4f4f9;
+    --card-bg: #ffffff;
+    --primary-color: #6200ea;
+    --primary-hover: #3700b3;
+    --text-color: #333;
+    --border-color: #ddd;
+    --error-color: #d32f2f;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #fafafa;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(98, 0, 234, 0.2);
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+.error-msg {
+    color: var(--error-color);
+    font-weight: bold;
+    min-height: 1.2rem;
+}
+
+.viz-container {
+    flex-grow: 1;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-height: 400px;
+    background-color: #fff;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* items at top */
+    padding: 20px;
+}
+
+/* SVG Styles */
+.node circle {
+    fill: #fff;
+    stroke: var(--primary-color);
+    stroke-width: 2px;
+}
+
+.node text {
+    font: 14px sans-serif;
+    text-anchor: middle;
+    dominant-baseline: central;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}

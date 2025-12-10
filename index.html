@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Tree Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Parse Tree Visualizer</h1>
+            <p>Enter a Context-Free Grammar and a string to visualize the parse tree.</p>
+        </header>
+
+        <div class="input-section">
+            <div class="start-symbol-container">
+                <label for="startSymbol">Start Symbol:</label>
+                <input type="text" id="startSymbol" value="E" placeholder="e.g., S">
+            </div>
+
+            <div class="grammar-container">
+                <label for="grammarInput">Grammar (BNF-like):</label>
+                <textarea id="grammarInput" placeholder="S -> A B | c
+A -> a
+B -> b" rows="6">E -> E + T | T
+T -> T * F | F
+F -> ( E ) | id</textarea>
+                <div class="help-text">Use '->' for rules and '|' for alternatives. Space-separated tokens.</div>
+            </div>
+
+            <div class="string-container">
+                <label for="stringInput">Test String:</label>
+                <input type="text" id="stringInput" value="id + id * id" placeholder="Space separated tokens e.g. a b">
+            </div>
+
+            <button id="visualizeBtn">Visualize Parse Tree</button>
+            <div id="errorMsg" class="error-msg"></div>
+        </div>
+
+        <div id="vizContainer" class="viz-container">
+            <!-- SVG will be appended here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
